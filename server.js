@@ -6,11 +6,18 @@ const expressValidator = require('express-validator');
 
 const app = express();
 
+app.use(express.static('public'));
+
 app.engine('mst', mustacheExpress());
 app.set('views', './views');
 app.set('view engine', 'mst');
 
-app.use(express.static('public'));
+let users = {
+  users: [
+    { id: 0, userName: 'user0', passWord: 'password0' },
+    { id: 1, userName: 'user1', passWord: 'password1'}
+  ]
+}
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));

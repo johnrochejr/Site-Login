@@ -30,22 +30,27 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 
 const authenticate = (req, res, next) => {
+  userLogin = req.query.userName;
 
   if (req.query.userName === "username" && req.query.passWord === "password") {
     next();
   } else {
-    res.redirect('login')
+    // add currentUser {{}}
+    res.redirect('/login')
   }
 }
 
 app.get('/login', (req, res) => {
   // res.render('home');
-  res.render('login');
+  res.render('login', userLogin);
 });
 
 app.use(authenticate);
 app.get('/', (req, res) => {
-  res.render('home');
+  let userData = {
+    userLogin: userLogin
+  }
+  res.render('home', userData);
 })
 
 app.listen(3000, () => {

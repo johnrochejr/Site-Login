@@ -1,5 +1,5 @@
 const express = require('express');
-const expressSession = require('express-session');
+const session = require('express-session');
 const mustacheExpress = require('mustache-express');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
@@ -12,10 +12,17 @@ app.set('view engine', 'mst');
 
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-  console.log('Home page was here');
-  res.render('home');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
+
+app.get('/login', (req, res) => {
+  // res.render('home');
+  res.render('login');
 });
+
+app.post('/login', (req, res) => {
+  // res.render('login');
+})
 
 app.listen(3000, () => {
   console.log('Port 3000 we are go for launch');

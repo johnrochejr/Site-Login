@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Home</title>
+    <link rel="stylesheet" href="/screen.css">
   </head>
   <body>
-    <h4>Hello from home.mst</h4>
+    <p>This is the home page. Users have to be logged in to access.</p>
   </body>
 </html>

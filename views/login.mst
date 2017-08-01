@@ -3,8 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>Login</title>
+    <link rel="stylesheet" href="/screen.css">
   </head>
   <body>
-
+    <div class="login">
+      <h1>Please log in</h1>
+      <form action="/" method="get">
+        <label>Usersname</label>
+          <input type="text" name="userName" value="" required>
+        <label>Password</label>
+          <input type="password" name="passWord" required>
+          <button type="submit">Go</button>
+          <span class="back">Back</span>
+          <span class=forgot><a href="#"> Forgot password?</a></span>
+      </form>
+    </div>
   </body>
 </html>

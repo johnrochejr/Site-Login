@@ -7,5 +7,7 @@
   </head>
   <body>
     <p>This is the home page. Users have to be logged in to access.</p>
+    <p>{{#currentUser}}{{currentUser}}{{/currentUser}}</p>
   </body>
 </html>
+ <!-- This will be the secret page. Where I can put username credentials -->
